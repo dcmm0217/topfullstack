@@ -3,7 +3,7 @@ import { InjectModel } from 'nestjs-typegoose';
 import { User } from '@libs/db/models/user.model';
 import { Crud } from 'nestjs-mongoose-crud';
 import { ApiUseTags } from '@nestjs/swagger';
-
+// 配置Crud
 @Crud({
     model: User,
 })

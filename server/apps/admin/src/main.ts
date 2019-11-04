@@ -4,6 +4,7 @@ import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  // 配置swagger
   const options = new DocumentBuilder()
     .setTitle('绯色天空-后台管理API')
     .setDescription('供后台管理界面调用的服务端API')

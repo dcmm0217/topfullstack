@@ -3,7 +3,7 @@ import { DbService } from './db.service';
 import { TypegooseModule } from 'nestjs-typegoose';
 import { User } from './models/user.model';
 const models = TypegooseModule.forFeature([User]);
-
+// 标记为全局使用
 @Global()
 @Module({
   imports: [
@@ -13,9 +13,11 @@ const models = TypegooseModule.forFeature([User]);
       useCreateIndex: true,
       useFindAndModify: false,
     }),
+    // 导入模型
     models,
   ],
   providers: [DbService],
+  // 导出模型
   exports: [DbService, models],
 })
 export class DbModule { }

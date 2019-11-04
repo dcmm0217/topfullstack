@@ -2,7 +2,6 @@
 import { prop, modelOptions } from '@typegoose/typegoose';
 import { ApiModelProperty } from '@nestjs/swagger';
 @modelOptions({
-    // 创建数据就会添加一个创建的时间戳，如果修改数据也会添加一个修改数据的时间戳
     schemaOptions: {
         timestamps: true,
     },

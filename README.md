@@ -3,7 +3,7 @@ Nodejs+vuejs全栈开发视频网站
 
 初始化项目：nest new server
 
-创建项目：nest g app admin
+单体仓库模式：nest g app admin
 
 - ![1572847836417](C:\Users\DC\AppData\Roaming\Typora\typora-user-images\1572847836417.png)
 
@@ -11,21 +11,27 @@ Nodejs+vuejs全栈开发视频网站
 
 使用Crud装饰器快速实现增删改查：
 
-增加数据库连接文件
+创建共用的数据库
 
 ​	nest g lib db      --->@libs
 
-安装插件：
+![1572856589749](C:\Users\DC\AppData\Roaming\Typora\typora-user-images\1572856589749.png)
+
+安装数据库模块：
 
 ​	yarn add nestjs-typegoose @typegoose/typegoose
 
 ![1572856455744](C:\Users\DC\AppData\Roaming\Typora\typora-user-images\1572856455744.png)
 
+安装mongoose
+
 ​	yarn add mongoose @types/mongoose
 
-配置users文件夹：
+在admin子项目下创建模块：
 
 ​	nest g mo -p admin users
+
+在admin子项目下创建控制器：
 
 ​	nest g co -p admin users
 
@@ -35,7 +41,7 @@ Nodejs+vuejs全栈开发视频网站
 
 ![1572856532795](C:\Users\DC\AppData\Roaming\Typora\typora-user-images\1572856532795.png)
 
-安装配置swagger
+安装配置swagger接口文档
 
 ​	yarn add @nestjs/swagger swagger-ui-express
 
