@@ -5,12 +5,14 @@ import { AppService } from './app.service';
 import { DbModule } from '@libs/db';
 import { UsersModule } from './users/users.module';
 import { CoursesModule } from './courses/courses.module';
+import { EpiscodesModule } from './episcodes/episcodes.module';
 
 @Module({
   imports: [
     DbModule,
     UsersModule,
     CoursesModule,
+    EpiscodesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
