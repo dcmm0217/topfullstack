@@ -2,7 +2,9 @@ import { Module, Global } from '@nestjs/common';
 import { DbService } from './db.service';
 import { TypegooseModule } from 'nestjs-typegoose';
 import { User } from './models/user.model';
-const models = TypegooseModule.forFeature([User]);
+import { Course } from './models/course.model';
+import { Episode } from './models/episode.model';
+const models = TypegooseModule.forFeature([User, Course, Episode]);
 // 标记为全局使用
 @Global()
 @Module({
