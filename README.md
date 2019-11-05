@@ -27,11 +27,11 @@ Nodejs+vuejs全栈开发视频网站
 
 ​	yarn add mongoose @types/mongoose
 
-在admin子项目下创建模块：
+在admin子项目下创建管理用户模块：
 
 ​	nest g mo -p admin users
 
-在admin子项目下创建控制器：
+在admin子项目下创建管理用户控制器：
 
 ​	nest g co -p admin users
 
@@ -46,3 +46,11 @@ Nodejs+vuejs全栈开发视频网站
 ​	yarn add @nestjs/swagger swagger-ui-express
 
 ![1572856366489](C:\Users\DC\AppData\Roaming\Typora\typora-user-images\1572856366489.png)
+
+在admin子项目下创建管理课程模块：
+
+​	nest g mo -p admin courses 
+
+在admin子项目下创建管理课程控制器：
+
+​	nest g co -p admin courses 
