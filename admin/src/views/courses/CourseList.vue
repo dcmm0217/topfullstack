@@ -49,7 +49,7 @@ export default class CourseList extends Vue {
     const res = await this.$http.get("courses");
     this.data = res.data;
   }
-  async remove(row) {
+  async remove(row:any) {
     try {
       await this.$confirm("是否确认删除");
     } catch (e) {

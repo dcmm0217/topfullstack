@@ -26,7 +26,7 @@ export default class CourseEdit extends Vue {
     return !this.id;
   }
 
-  async submit(data) {
+  async submit(data:any) {
     const url = this.isNew ? `courses` : `courses/${this.id}`;
     const method = this.isNew ? "post" : "put";
     await this.$http[method](url, data);

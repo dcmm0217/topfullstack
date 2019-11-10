@@ -54,3 +54,14 @@ Nodejs+vuejs全栈开发视频网站
 在admin子项目下创建管理课程控制器：
 
 ​	nest g co -p admin courses 
+
+安装axios
+
+​	yarn add axios types/axios
+
+安装avue重新修改项目的增删改查
+
+​	yarn add @smallwei/avue
+
+
+
