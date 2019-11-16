@@ -1,12 +1,14 @@
 <template>
   <div>
     <avue-crud
-    v-if="option.column"
+      v-if="option.column"
+      :page="page"
       :data="data.data"
       :option="option"
       @row-save="create"
       @row-del="remove"
       @row-update="update"
+      @on-load="changePage"
     ></avue-crud>
   </div>
 </template>
@@ -16,11 +18,19 @@ import { Vue, Component, Prop } from "vue-property-decorator";
 
 @Component({})
 export default class ResourceList extends Vue {
- @Prop(String) resource!:string
+  @Prop(String) resource!: string;
 
   data = {};
-
+  page = {
+    pageSize: 2,
+    pageSizes: [2, 5, 10],
+    total: 0
+  };
   option = {};
+  query = {
+    limit: 2,
+    page: 1
+  };
   // 请求数据模板
   async fetchOption() {
     const res = await this.$http.get(`${this.resource}/option`);
@@ -28,8 +38,19 @@ export default class ResourceList extends Vue {
   }
   // 请求全部数据
   async fetch() {
-    const res = await this.$http.get(`${this.resource}`);
+    const res = await this.$http.get(`${this.resource}`, {
+      params: {
+        query: this.query
+      }
+    });
+    this.page.total = res.data.total;
     this.data = res.data;
+  }
+  // 分页
+  async changePage({ pageSize, currentPage }:any) {
+    this.query.page = currentPage; 
+    this.query.limit = pageSize;
+    this.fetch();
   }
 
   // 创建数据
