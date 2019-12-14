@@ -10,6 +10,7 @@
       @row-update="update"
       @on-load="changePage"
       @sort-change="changeSort"
+      @search-change="search"
     ></avue-crud>
   </div>
 </template>
@@ -27,7 +28,7 @@ export default class ResourceList extends Vue {
     pageSizes: [2, 5, 10],
     total: 0
   };
-  option = {};
+  option: any = {};
   query: any = {
     limit: 2,
     page: 1
@@ -54,7 +55,7 @@ export default class ResourceList extends Vue {
     this.fetch();
   }
   // 排序
-  async changeSort({ prop, order }) {
+  async changeSort({ prop, order }: any) {
     if (!order) {
       this.query.sort = null;
     } else {
@@ -62,6 +63,16 @@ export default class ResourceList extends Vue {
         [prop]: order === "ascending" ? 1 : -1
       };
     }
+    this.fetch();
+  }
+  // 搜索
+  async search(where: any) {
+    for (let k in where) {
+      const field = this.option.column.find((v: any) => v.prop === k);
+      where[k] = { $regex: where[k] };
+    }
+
+    this.query.where = where;
     this.fetch();
   }
 
