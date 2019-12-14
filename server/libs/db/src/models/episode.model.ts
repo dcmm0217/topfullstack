@@ -1,13 +1,15 @@
-import { prop, modelOptions } from '@typegoose/typegoose';
+import { prop, modelOptions } from "@typegoose/typegoose";
+
 @modelOptions({
-    schemaOptions: {
-        timestamps: true,
-    },
+  schemaOptions: {
+    timestamps: true
+  }
 })
 export class Episode {
-    @prop()
-    name: string;
+  @prop()
+  name: string
 
-    @prop()
-    file: string;
+  @prop()
+  file: string
+
 }

@@ -5,9 +5,8 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.enableCors();
-  // 配置swagger
   const options = new DocumentBuilder()
-    .setTitle('绯色天空-后台管理API')
+    .setTitle('全栈之巅-后台管理API')
     .setDescription('供后台管理界面调用的服务端API')
     .setVersion('1.0')
     .build();
@@ -16,6 +15,6 @@ async function bootstrap() {
 
   await app.listen(3000);
   // tslint:disable-next-line: no-console
-  console.log('http://localhost:3000/api-docs');
+  console.log(`http://localhost:3000/api-docs`);
 }
 bootstrap();
