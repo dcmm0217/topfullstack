@@ -9,6 +9,7 @@
       @row-del="remove"
       @row-update="update"
       @on-load="changePage"
+      @sort-change="changeSort"
     ></avue-crud>
   </div>
 </template>
@@ -27,7 +28,7 @@ export default class ResourceList extends Vue {
     total: 0
   };
   option = {};
-  query = {
+  query: any = {
     limit: 2,
     page: 1
   };
@@ -47,9 +48,20 @@ export default class ResourceList extends Vue {
     this.data = res.data;
   }
   // 分页
-  async changePage({ pageSize, currentPage }:any) {
-    this.query.page = currentPage; 
+  async changePage({ pageSize, currentPage }: any) {
+    this.query.page = currentPage;
     this.query.limit = pageSize;
+    this.fetch();
+  }
+  // 排序
+  async changeSort({ prop, order }) {
+    if (!order) {
+      this.query.sort = null;
+    } else {
+      this.query.sort = {
+        [prop]: order === "ascending" ? 1 : -1
+      };
+    }
     this.fetch();
   }
 
