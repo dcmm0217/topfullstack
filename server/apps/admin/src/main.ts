@@ -17,8 +17,8 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('api-docs', app, document);
 
-  await app.listen(3000);
+  await app.listen(3009);
   // tslint:disable-next-line: no-console
-  console.log(`http://localhost:3000/api-docs`);
+  console.log(`http://localhost:3009/api-docs`);
 }
 bootstrap();
