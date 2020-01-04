@@ -5,6 +5,7 @@ import { Episode } from './episode.model';
 @modelOptions({
   schemaOptions: {
     timestamps: true,
+    toJSON: { virtuals: true },
   },
 })
 export class Course {
@@ -16,7 +17,13 @@ export class Course {
   @prop()
   cover: string;
 
-/*   @arrayProp({ itemsRef: 'Episode' })
+  @arrayProp({
+    ref: 'Episode',
+    localField: '_id',
+    foreignField: 'course',
+
+  })
   // tslint:disable-next-line: array-type
-  episodes: Ref<Episode>[]; */
+  episodes: Ref<Episode>[];
+
 }
