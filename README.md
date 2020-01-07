@@ -60,8 +60,9 @@ Nodejs+vuejs全栈开发视频网站
 ​	yarn add axios types/axios
 
 安装avue重新修改项目的增删改查
-
 ​	yarn add @smallwei/avue
+yarn更新依赖包指令
+    yarn upgrade-interactive --latest
 
 
 

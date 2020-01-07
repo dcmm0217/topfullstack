@@ -5,7 +5,7 @@
       v-model="correntIndex"
       :items="course.episodes.map((v, i) => ({ text: v.name, value: i }))"
     ></v-select>
-    <video width="100%" :src="episode.file" controls></video>
+    <video :src="episode.file" width="100%" controls></video>
   </div>
 </template>
 
