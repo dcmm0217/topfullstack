@@ -6,9 +6,10 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.enableCors();
   const options = new DocumentBuilder()
-    .setTitle('绯色天空-后台管理API')
-    .setDescription('供后台管理界面调用的服务端API')
+    .setTitle('绯色天空-前端管理API')
+    .setDescription('供网站和APP管理界面调用的服务端API')
     .setVersion('1.0')
+    .addBearerAuth()
     .build();
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('api-docs', app, document);
