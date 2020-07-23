@@ -15,10 +15,10 @@ import MAO = require('multer-aliyun-oss');
       // dest: 'uploads',
       storage: MAO({
         config: {
-          region: 'oss-cn-shenzhen',
-          accessKeyId: 'LTAI4FxrAzfMBwFA1nwcRogV',
-          accessKeySecret: 'RYK3STSl3dUQRni6xSVJ2okUd1L1po',
-          bucket: 'tofullres',
+          region: process.env.OSS_REGION,
+          accessKeyId: process.env.OSS_ACCESS_KEY_ID,
+          accessKeySecret: process.env.OSS_ACCESS_KEY_SECRET ,
+          bucket: process.env.OSS_BUCKET,
         },
       }),
     }),
