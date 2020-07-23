@@ -16,8 +16,8 @@ import MAO = require('multer-aliyun-oss');
       storage: MAO({
         config: {
           region: 'oss-cn-shenzhen',
-          accessKeyId: 'LTAI4FxrAzfMBwFA1nwcRogV',
-          accessKeySecret: 'RYK3STSl3dUQRni6xSVJ2okUd1L1po',
+          accessKeyId: '',
+          accessKeySecret: '',
           bucket: 'tofullres',
         },
       }),
