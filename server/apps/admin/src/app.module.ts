@@ -27,17 +27,6 @@ import { CommonModule } from '@app/common';
         };
       },
     }),
-    /*    MulterModule.register({
-         // dest: 'uploads',
-         storage: MAO({
-           config: {
-             region: 'oss-cn-shenzhen',
-             accessKeyId: 'LTAI4FxrAzfMBwFA1nwcRogV',
-             accessKeySecret: 'RYK3STSl3dUQRni6xSVJ2okUd1L1po',
-             bucket: 'tofullres',
-           },
-         }),
-       }), */
     UsersModule,
     CoursesModule,
     EpiscodesModule,
